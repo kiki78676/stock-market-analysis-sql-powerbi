@@ -184,11 +184,17 @@ Sharpe Ratio identifies MSFT/AMZN as best risk-adjusted picks
 
 ## 🔷 How to Recreate the Project
 1️⃣ Download stock data (CSV) from Stooq
+
 2️⃣ Load CSVs into SQL Server
+
 3️⃣ Run SQL transformation scripts
+
 4️⃣ Export daily_metrics & summary_metrics
+
 5️⃣ Load into Power BI
+
 6️⃣ Build the interactive dashboard
+
 ## 🔷 Skills Demonstrated
 
 SQL Window Functions
