@@ -73,30 +73,6 @@ Daily & Annualized Volatility
 
 Sharpe Ratio
 
-📂 Project Structure
-stock-market-analysis-sql-powerbi/
-│
-├── data/
-│   ├── daily_metrics.csv
-│   └── summary_metrics.csv
-│
-├── sql/
-│   ├── create_stocks_table.sql
-│   ├── insert_stocks.sql
-│   ├── daily_metrics_table.sql
-│   ├── summary_metrics_query.sql
-│
-├── powerbi/
-│   └── stock_dashboard.pbix
-│
-├── images/
-│   ├── cumulative_returns.png
-│   ├── risk_return_scatter.png
-│   ├── sharpe_ratio_chart.png
-│   └── sector_returns.png
-│
-└── README.md
-
 📈 Power BI Dashboard Features
 🚀 1. Cumulative Return Line Chart
 
