@@ -1,163 +1,206 @@
-# 📘 Stock Market Analysis Using SQL & Power BI
+# 📈 Stock Market Analysis Using SQL & Power BI
+A complete end-to-end financial analytics and visualization project
+## 🔷 Overview
 
-A complete financial analytics project calculating returns, volatility, Sharpe ratios, moving averages, and trend signals for major U.S. stocks.
+This project analyzes the performance of major U.S. stocks using SQL Server for data transformation and Power BI for interactive dashboards.
+It includes daily returns, cumulative returns, moving averages, volatility, Sharpe ratio, and trend signals such as bullish/bearish crossovers.
 
-## 🔹 1. Project Description
+This project replicates real financial workflows used by data analysts, BI developers, and quant analysts.
 
-This project analyzes historical stock price data from 8 major companies and sector ETFs using SQL Server and visualizes insights using Power BI.
+## 🔷 Goals of the Project
 
-The goal is to build a data-driven portfolio performance dashboard showing:
+Analyze long-term and short-term stock performance
 
-Stock returns
+Build a reusable SQL pipeline for financial time-series data
 
-Market trends
+Generate actionable metrics such as returns, volatility, Sharpe ratio
 
-Moving average crossovers
+Identify market trends using moving averages
 
-Sector performance
+Visualize insights with a professional Power BI dashboard
 
-Risk vs return behavior
+Compare stocks vs the SPY benchmark
 
-Sharpe ratio analysis
+Compare sector performance (Tech, Financial, Energy)
 
-## 🔹 2. Objectives
+## 🔷 Stocks Included
+Sector	Ticker	Company
+Tech	AAPL	Apple
+Tech	MSFT	Microsoft
+Tech	AMZN	Amazon
+Tech	META	Meta Platforms
+Tech	GOOGL	Alphabet
+Financial	JPM	JPMorgan Chase
+Energy	XLE	Energy Select Sector ETF
+Market Benchmark	SPY	S&P 500 ETF
+## 🔷 Technologies Used
+🗄 SQL Server
 
-The project answers the following key business questions:
+Data Cleaning
 
-✔ Which stocks performed best over time?
-✔ Which stocks offer the best risk-adjusted returns (Sharpe Ratio)?
-✔ When did bullish/bearish moving average crossovers occur?
-✔ How do sectors compare against the SPY benchmark?
-✔ Which stocks are the most volatile?
-## 🔹 3. Dataset Overview
+Window Functions
 
-The dataset comes from Stooq Free Stock Data (CSV files).
-Daily historical data includes:
+LAG, FIRST_VALUE
 
-Date                              
+Moving Averages (50, 200)
 
-Open
+Trend detection (bullish/bearish crossover)
 
-High
+Volatility & Sharpe ratio
 
-Low
+📊 Power BI
 
-Close
+Cumulative Return Visualization
 
-Volume
+Risk vs Return Scatter Plot
 
-Stocks analyzed: AAPL ,MSFT ,AMZN ,META ,GOOGL ,JPM ,XLE ,SPY
+Sharpe Ratio Bar Chart
 
-## 🔹 4. Technologies Used
-Category	Tools
-Database	SQL Server
-Data Processing	SQL Window Functions
-Visualization	Power BI
-Version Control	Git & GitHub
-File Format	CSV
-Data Source	Stooq
-## 🔹 5. SQL Transformations Performed
-5.1 Daily Returns
+Sector Comparison Analysis
 
-Calculated using LAG function:
+Trend Signal Table
 
-(close - prev_close) / prev_close
+🧰 Additional Tools
 
-5.2 Cumulative Returns
+CSV Data (Stooq)
 
-Rebased to initial price:
+Git & GitHub
+
+DAX (basic formatting inside Power BI)
+
+## 🔷 SQL Transformations
+### 📌 1. Daily Returns
+
+Using LAG() to compare today’s close vs yesterday’s.
+
+(close - previous_close) / previous_close
+
+### 📌 2. Cumulative Return (Growth Over Time)
+
+Rebased to the first closing price:
 
 (close / first_close) - 1
 
-5.3 Moving Averages
+### 📌 3. Moving Averages
 
 50-day moving average
 
 200-day moving average
 
-5.4 Trend Signals
+Using SQL window frames:
+
+ROWS BETWEEN 49 PRECEDING AND CURRENT ROW
+
+### 📌 4. Trend Classification
 
 Bullish → MA50 > MA200
 
 Bearish → MA50 < MA200
 
-5.5 Crossover Events
+Neutral → MA50 = MA200
 
-Golden Cross
+### 📌 5. Crossover Events
 
-Death Cross
+Golden Cross → MA50 crosses above MA200
 
-5.6 Risk Metrics
+Death Cross → MA50 crosses below MA200
 
-Annualized return
+### 📌 6. Risk Metrics
 
-Annualized volatility
+Annualized Return → Compounded from average daily return
 
-Sharpe ratio
+Daily Volatility → STDEV of daily returns
 
-## 🔹 6. Power BI Dashboard Features
-6.1 Cumulative Returns Line Chart
+Annualized Volatility → Daily volatility × √252
 
-Shows long-term growth of each stock vs SPY.
+Sharpe Ratio → Risk-adjusted performance
 
-6.2 Risk vs Return Scatter Plot
+## 🔷 Power BI Dashboard Features
+### 📊 1. Cumulative Return Line Chart
 
-Visualizes how volatility relates to performance.
+Shows long-term stock growth
 
-6.3 Sharpe Ratio Ranking
+Benchmarked against SPY
 
-Ranks stocks by risk-adjusted returns.
+Identifies outperformers clearly
 
-6.4 Sector Comparison Chart
+### 📊 2. Risk vs Return Scatter Plot
 
-Tech vs Financial vs Energy vs Benchmark.
+X-axis: Annualized Volatility
 
-6.5 Moving Average Trend Signals
+Y-axis: Annualized Return
 
-Identifies market momentum changes.
+Helps identify high-risk vs high-reward stocks
 
-## 🔹 7. Key Insights
-✔ Tech sector outperformed all other sectors
-✔ MSFT and AMZN showed best risk-adjusted performance
-✔ SPY provides steady, low-risk growth
-✔ XLE (Energy) has the highest volatility
-✔ Multiple bullish crossovers were detected in major stocks
-## 🔹 8. How to Reproduce the Project
-Step 1: Download CSV stock data from Stooq
-Step 2: Load data into SQL Server
-Step 3: Run SQL scripts to generate metrics
-Step 4: Export results to CSV
-Step 5: Load CSV files into Power BI
-Step 6: Build dashboard from visuals
-## 🔹 9. Skills Demonstrated
+### 📊 3. Sharpe Ratio Chart
 
-> SQL window functions
+Ranks stocks by risk-adjusted return
 
-> Time-series analysis
+Useful for balanced portfolio selection
 
-> Data cleaning & transformation
+### 📊 4. Sector Comparison Chart
 
-> Financial analytics
+Tech vs Financial vs Energy vs Market
 
-> Power BI visualization
+Shows industry-level patterns
 
-> Data modeling
+### 📊 5. Moving Average Crossover Table
 
-> GitHub documentation
+Flags bullish & bearish crossover dates
 
-> Trend and signal detection
+Helps identify momentum shifts
 
-## 🔹 10. Future Enhancements
+## 🔷 Key Insights
 
-> Add dividend-adjusted returns
+MSFT & AMZN show strongest performance over time
 
-> Add forecasting (ARIMA, Prophet)
+SPY provides stable low-risk returns, ideal benchmark
 
-> Build real-time API data refresh
+Tech sector outperforms Energy and Financial sectors
 
-> Add portfolio optimization (Markowitz Model)
+Golden Cross events align with strong upward trends
 
-## 🔹 11. Conclusion
+XLE (Energy) has high volatility but inconsistent return
 
-This end-to-end financial analytics project demonstrates strong skills in SQL, data processing, visualization, and financial interpretation.
-It replicates real-world stock analysis used by analysts, data engineers, and portfolio managers.
+Sharpe Ratio identifies MSFT/AMZN as best risk-adjusted picks
+
+## 🔷 How to Recreate the Project
+1️⃣ Download stock data (CSV) from Stooq
+2️⃣ Load CSVs into SQL Server
+3️⃣ Run SQL transformation scripts
+4️⃣ Export daily_metrics & summary_metrics
+5️⃣ Load into Power BI
+6️⃣ Build the interactive dashboard
+## 🔷 Skills Demonstrated
+
+SQL Window Functions
+
+Time-Series Data Analysis
+
+Power BI Dashboard Design
+
+Crossover Trend Detection
+
+Financial KPIs (Sharpe, Volatility, Returns)
+
+Data Modeling
+
+Git/GitHub Project Structuring
+
+Documentation & Presentation
+
+## 🔷 Future Improvements
+
+Add dividend-adjusted returns
+
+Add forecasting model (Prophet/ARIMA)
+
+Build automated refresh pipeline
+
+Add sector-weighted portfolio optimization
+
+## 🔷 Conclusion
+
+This project showcases end-to-end analytical capability:
+from data ingestion → SQL transformation → modeling → visualization → insights.
+It demonstrates skills in financial analytics, BI reporting, and technical data handling — making it a strong portfolio piece for data analytics or data engineering roles.
