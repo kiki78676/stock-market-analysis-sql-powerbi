@@ -34,7 +34,7 @@ The project answers the following key business questions:
 The dataset comes from Stooq Free Stock Data (CSV files).
 Daily historical data includes:
 
-Date
+Date                              
 
 Open
 
@@ -46,23 +46,7 @@ Close
 
 Volume
 
-Stocks analyzed:
-
-AAPL
-
-MSFT
-
-AMZN
-
-META
-
-GOOGL
-
-JPM
-
-XLE
-
-SPY (benchmark)
+Stocks analyzed: AAPL ,MSFT ,AMZN ,META ,GOOGL ,JPM ,XLE ,SPY
 
 ## 🔹 4. Technologies Used
 Category	Tools
@@ -132,72 +116,48 @@ Tech vs Financial vs Energy vs Benchmark.
 
 Identifies market momentum changes.
 
-## 🔹 7. Project Structure
-stock-market-analysis-sql-powerbi/
-│
-├── data/
-│   ├── summary_metrics.csv
-│   └── daily_metrics.csv
-│
-├── sql/
-│   ├── create_stocks_table.sql
-│   ├── insert_stocks.sql
-│   ├── daily_metrics_table.sql
-│   └── summary_metrics_query.sql
-│
-├── powerbi/
-│   └── stock_dashboard.pbix
-│
-├── images/
-│   ├── cumulative_returns.png
-│   ├── risk_return.png
-│   ├── sharpe_ratio.png
-│   └── sector_chart.png
-│
-└── README.md
-
-## 🔹 8. Key Insights
+## 🔹 7. Key Insights
 ✔ Tech sector outperformed all other sectors
 ✔ MSFT and AMZN showed best risk-adjusted performance
 ✔ SPY provides steady, low-risk growth
 ✔ XLE (Energy) has the highest volatility
 ✔ Multiple bullish crossovers were detected in major stocks
-## 🔹 9. How to Reproduce the Project
+## 🔹 8. How to Reproduce the Project
 Step 1: Download CSV stock data from Stooq
 Step 2: Load data into SQL Server
 Step 3: Run SQL scripts to generate metrics
 Step 4: Export results to CSV
 Step 5: Load CSV files into Power BI
 Step 6: Build dashboard from visuals
-## 🔹 10. Skills Demonstrated
+## 🔹 9. Skills Demonstrated
 
-SQL window functions
+> SQL window functions
 
-Time-series analysis
+> Time-series analysis
 
-Data cleaning & transformation
+> Data cleaning & transformation
 
-Financial analytics
+> Financial analytics
 
-Power BI visualization
+> Power BI visualization
 
-Data modeling
+> Data modeling
 
-GitHub documentation
+> GitHub documentation
 
-Trend and signal detection
+> Trend and signal detection
 
-## 🔹 11. Future Enhancements
+## 🔹 10. Future Enhancements
 
-Add dividend-adjusted returns
+> Add dividend-adjusted returns
 
-Add forecasting (ARIMA, Prophet)
+> Add forecasting (ARIMA, Prophet)
 
-Build real-time API data refresh
+> Build real-time API data refresh
 
-Add portfolio optimization (Markowitz Model)
+> Add portfolio optimization (Markowitz Model)
 
-## 🔹 12. Conclusion
+## 🔹 11. Conclusion
 
 This end-to-end financial analytics project demonstrates strong skills in SQL, data processing, visualization, and financial interpretation.
 It replicates real-world stock analysis used by analysts, data engineers, and portfolio managers.
