@@ -7,6 +7,24 @@ It includes daily returns, cumulative returns, moving averages, volatility, Shar
 
 This project replicates real financial workflows used by data analysts, BI developers, and quant analysts.
 
+## 🔷 Live Power BI Dashboard
+
+👉 View the interactive dashboard here:
+
+🔗 https://app.powerbi.com/view?r=eyJrIjoiM2M1YTEyZDMtNjA2MC00Y2U1LWI3YjgtOTljZTBhZmY4ZDg1IiwidCI6IjcwZGUxOTkyLTA3YzYtNDgwZi1hMzE4LWExYWZjYmEwMzk4MyIsImMiOjN9
+
+This link includes:
+
+Cumulative return chart
+
+Risk vs return scatter
+
+Sharpe ratio bar chart
+
+Sector performance
+
+Moving average crossovers
+
 ## 🔷 Goals of the Project
 
 Analyze long-term and short-term stock performance
